@@ -26,7 +26,7 @@ const ForcastCard: React.FC<{
           : ""}
       </p>
       <Image
-        src={`https://${icon.replaceAll("64", "128")}`}
+        src={`https:${icon.replaceAll("64", "128")}`}
         alt="weather"
         width={100}
         height={100}
