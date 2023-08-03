@@ -1,0 +1,44 @@
+@use "../helpers/" as *;
+
+.forcastCard {
+  background-color: $main-color;
+  text-align: center;
+  padding: 20px;
+  & p {
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+  & .temp {
+    display: flex;
+    justify-content: space-between;
+    & span {
+      font-size: 20px;
+      @include mobile {
+        font-size: 16px;
+      }
+      &:last-of-type {
+        color: $secondary-text;
+        & .cele {
+          color: $secondary-text;
+          &::before {
+            border-color: $secondary-text;
+          }
+        }
+      }
+      & .cele {
+        font-size: 20px;
+        color: white;
+        margin-left: 5px;
+
+        &::before {
+          width: 3px;
+          height: 3px;
+          top: 0;
+          left: -5px;
+          border-color: white;
+        }
+      }
+    }
+  }
+}

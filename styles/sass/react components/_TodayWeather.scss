@@ -1,0 +1,112 @@
+@use "../helpers/" as *;
+
+main {
+  display: grid;
+  grid-template-columns: 0.35fr 1fr;
+  position: relative;
+  @include small-screen {
+    height: 100vh;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+  & .todayWeather {
+    background-color: $main-color;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-width: 370px;
+    @include mobile {
+      height: 100vh;
+    }
+    & .cloud {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      color: #292c44;
+      &.cloud1 {
+        top: 120px;
+        left: -30px;
+      }
+      &.cloud2 {
+        top: 270px;
+        left: -20px;
+      }
+      &.cloud3 {
+        top: 130px;
+        right: -50px;
+      }
+      &.cloud4 {
+        top: 280px;
+        right: -40px;
+      }
+    }
+    & .buttons {
+      display: flex;
+      justify-content: space-between;
+      & .search {
+        border: none;
+        background-color: $secondary-text;
+        color: white;
+        padding: 0 15px;
+      }
+      & .location {
+        border: none;
+        background-color: $secondary-text;
+        border-radius: 50%;
+        padding: 6px;
+        & .icon {
+          @include center;
+          height: 20px;
+          width: 20px;
+          color: white;
+        }
+      }
+    }
+    & .weatherImage {
+      margin: 80px auto 0;
+      text-align: center;
+      @include mobile {
+        margin: 60px auto 0;
+      }
+    }
+    & .temper {
+      font-size: 100px;
+    }
+    & .description {
+      margin: 40px auto;
+      font-size: 30px;
+      color: $secondary-text;
+      @include mobile {
+        margin: 20px auto;
+      }
+    }
+    & .date {
+      margin-top: 75px;
+      color: $secondary-text;
+      @include mobile {
+        margin-top: 0;
+      }
+      & span:first-child {
+        margin-right: 20px;
+      }
+      & span:last-child {
+        margin-left: 20px;
+      }
+    }
+    & .city {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $secondary-text;
+      & .icon {
+        width: 12px;
+        object-fit: cover;
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "../helpers/" as *;
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f6f6f6;
+  box-shadow: 0 0 10px #ddd inset;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+  border-radius: 30px;
+  &:hover {
+    background-color: $main-color;
+  }
+}

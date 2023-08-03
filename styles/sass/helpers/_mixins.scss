@@ -1,0 +1,83 @@
+@use "./variables" as *;
+// Media Queries
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin small-screen {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin medium-screen {
+  @media (min-width: 990px) {
+    @content;
+  }
+}
+@mixin average-screen {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+@mixin large-screen {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+// Overlay
+@mixin overlay-black {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba($color: #000, $alpha: 0.6);
+}
+// Prefixer
+@mixin prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+// Animation
+@mixin keyframe($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+// Position Absolute Centering
+@mixin abs-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  content: "";
+}
+@mixin abs-x {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  content: "";
+}
+@mixin abs-y {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  content: "";
+}
+// Flex Centering
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// special color
+@mixin specialColor {
+  background: $main-color;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
